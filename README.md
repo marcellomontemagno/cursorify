@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/marcellomontemagno/cursorify.svg?style=shield)](https://circleci.com/gh/marcellomontemagno/cursorify)
+
 ## What is it about?
 
 It helps to manipulate, complex and deeply nested objects trees.
