@@ -187,3 +187,19 @@ it(`getByCursor, nested, not found`, () => {
 
 });
 
+it(`getByCursor, function value`, () => {
+
+  const val = function(){};
+
+  const obj = cursors.push('c1', {
+    a: cursors.push('c11', {
+      b: [{}, cursors.push('c111', val)],
+      c: {}
+    })
+  });
+
+  getByCursor(obj, cursors['c111']);
+
+  expect(getByCursor(obj, cursors['c111'])).toEqual(val);
+
+});

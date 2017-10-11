@@ -232,3 +232,23 @@ it(`deleteByCursor, nested, not found`, () => {
   });
 
 });
+
+it(`deleteByCursor, function value`, () => {
+
+  const obj = cursors.push('c1', {
+    a: cursors.push('c11', {
+      b: [{}, cursors.push('c111', function(){})],
+      c: {}
+    })
+  });
+
+  deleteByCursor(obj, cursors['c111']);
+
+  expect(obj).toEqual({
+    a: {
+      b: [{}],
+      c: {},
+    }
+  });
+
+});
