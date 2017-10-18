@@ -90,7 +90,7 @@ setByCursors(obj, cursors['cursor1'], {k:2});
     }
   }
 
-/*
+*/
 ```
 
 ## API
@@ -105,7 +105,7 @@ import {createCursors, getByCursor, setByCursor, deleteByCursor} from 'cursorify
 - setByCursor(obj, cursor, newValue) overrides a value in `obj` using the cursor `cursor`
 - deleteByCursor(obj, cursor) deletes a value in `obj` using the cursor `cursor`
     - if the cursor points to an entry into an array deleteByCursor removes that entry from the array
-    - if the cursor points to a value into an object deleteByCursor removes the relative key from the object
+    - if the cursor points to a value into an object deleteByCursor removes the related key from the object
 
 ## When is this library useful? (A real use case)
 
@@ -290,7 +290,7 @@ let config = {
 creating cursors doesn't mutate the original object so that you can keep on using it as usual, the advantage is that changing the loaders now is very simple e.g:
 
 ```javascript
-//the following code remplaces the existing loader for the svg files completely:
+//the following code replaces the existing loader for the svg files completely:
 
 import {setByCursor} from 'cursorify';
 
