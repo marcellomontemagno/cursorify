@@ -36,6 +36,22 @@ it(`getByCursor, object, middle`, () => {
 
 });
 
+it(`getByCursor, object, middle with null`, () => {
+
+  const obj = {
+    a: {
+      b: null,
+      c: cursors.push('c1',
+        val
+      ),
+      d: {}
+    }
+  };
+
+  expect(getByCursor(obj, cursors['c1'])).toBe(val);
+
+});
+
 it(`getByCursor, object, tip`, () => {
 
   const obj = {
@@ -77,6 +93,21 @@ it(`getByCursor, array, middle`, () => {
 
   const obj = [
     {},
+    cursors.push('c1',
+      val
+    ),
+    {}
+  ];
+
+  expect(getByCursor(obj, cursors['c1'])).toBe(val);
+
+});
+
+it(`getByCursor, array, middle with null`, () => {
+
+  const obj = [
+    {},
+    null,
     cursors.push('c1',
       val
     ),
@@ -189,7 +220,8 @@ it(`getByCursor, nested, not found`, () => {
 
 it(`getByCursor, function value`, () => {
 
-  const val = function(){};
+  const val = function () {
+  };
 
   const obj = cursors.push('c1', {
     a: cursors.push('c11', {

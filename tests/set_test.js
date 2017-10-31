@@ -45,6 +45,30 @@ it(`setByCursor, object, middle`, () => {
 
 });
 
+it(`setByCursor, object, middle with null`, () => {
+
+  const obj = {
+    a: {
+      b: null,
+      c: cursors.push('c1',
+        val
+      ),
+    },
+    d: {}
+  };
+
+  setByCursor(obj, cursors['c1'], {some: 2});
+
+  expect(obj).toEqual({
+    a: {
+      b: null,
+      c: {some: 2}
+    },
+    d: {}
+  });
+
+});
+
 it(`setByCursor, object, tip`, () => {
 
   const obj = {
@@ -105,6 +129,23 @@ it(`setByCursor, array, middle`, () => {
   setByCursor(obj, cursors['c1'], {some: 2});
 
   expect(obj).toEqual([{}, {some: 2}, {}]);
+
+});
+
+it(`setByCursor, array, middle with null`, () => {
+
+  const obj = [
+    {},
+    null,
+    cursors.push('c1',
+      val
+    ),
+    {}
+  ];
+
+  setByCursor(obj, cursors['c1'], {some: 2});
+
+  expect(obj).toEqual([{}, null, {some: 2}, {}]);
 
 });
 

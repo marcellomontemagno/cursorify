@@ -1,4 +1,5 @@
 export default function getByCursor (obj, cursor) {
+  obj = obj || {};
   for (const key of Object.keys(obj)) {
     const value = obj[key];
     if (value === cursor.value) {

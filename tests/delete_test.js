@@ -44,6 +44,29 @@ it(`deleteByCursor, object, middle`, () => {
 
 });
 
+it(`deleteByCursor, object, middle with null`, () => {
+
+  const obj = {
+    a: {
+      b: null,
+      c: cursors.push('c1',
+        val
+      ),
+      d: {}
+    }
+  };
+
+  deleteByCursor(obj, cursors['c1']);
+
+  expect(obj).toEqual({
+    a: {
+      b: null,
+      d: {}
+    }
+  });
+
+});
+
 it(`deleteByCursor, object, tip`, () => {
 
   const obj = {
@@ -100,6 +123,23 @@ it(`deleteByCursor, array, middle`, () => {
   deleteByCursor(obj, cursors['c1']);
 
   expect(obj).toEqual([{a: 1}, {c: 2}]);
+
+});
+
+it(`deleteByCursor, array, middle with null`, () => {
+
+  const obj = [
+    {a: 1},
+    null,
+    cursors.push('c1',
+      val
+    ),
+    {c: 2}
+  ];
+
+  deleteByCursor(obj, cursors['c1']);
+
+  expect(obj).toEqual([{a: 1}, null, {c: 2}]);
 
 });
 

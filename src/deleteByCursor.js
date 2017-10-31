@@ -4,6 +4,7 @@ export default function deleteByCursor (obj, cursor) {
   let prevObj;
 
   function doDeleteByCursor (obj, cursor) {
+    obj = obj || {};
     for (const key of Object.keys(obj)) {
       const value = obj[key];
       prevKey = key;
